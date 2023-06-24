@@ -52,3 +52,4 @@ unserialize($Letmeseesee);
 |__construct|創建時自動用|
 |__destruct|結束時自動用|
 |__wakeup|序列化時候會自動用|
+|sha1()|是一種不可逆加密算法|
