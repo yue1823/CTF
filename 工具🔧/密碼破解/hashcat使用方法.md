@@ -25,6 +25,15 @@ $6  = SHA-512 Algorithm
       3 : 代表Brute-force模式
       0 : single 模式
       1 : 單字組合模式
+      Brute-Force attack (-a 3)
+      Combinator attack (-a 1)
+      Dictionary attack (-a 0)
+      Hybrid attack (-a 6, -a 7)
+      Mask attack (-a 3)
+      Rule-based attack (-r option to -a 0)
+      Toggle-Case attack (only supported by using rule files)
+      Association attack (a -9)
+
       
 暴力格式
 
