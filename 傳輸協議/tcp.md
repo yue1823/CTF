@@ -19,6 +19,8 @@ response = client.recv(4096)
 print(response.decode())
 client.close()
 ```
-# 1. AF_INET = IPv4 或 主機名 ， SOCK_STERAM = TCP 客戶端 -> 連接客戶端
-# 2. 發送bytes類型的數據
-# 3. 收，print，關客戶端
+ 1. AF_INET = IPv4 或 主機名 ， SOCK_STERAM = TCP 客戶端 -> 連接客戶端
+ 
+ 2. 發送bytes類型的數據
+  
+ 3. 收，print，關客戶端
