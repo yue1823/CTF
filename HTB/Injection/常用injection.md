@@ -21,3 +21,7 @@ XQuery注入`	' ; -- /* */`
 Shellcode注入	`\x \u %u %n`
 
 頭注入	`\n \r\n \t %0d %0a %09`
+
+不帶空格的注入 
+
+`https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Command%20Injection#bypass-without-space`
